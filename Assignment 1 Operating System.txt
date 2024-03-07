@@ -1,0 +1,89 @@
+Assignment 1 Operating System:
+
+a) Navigate and List:
+a. Start by navigating to your home directory and list its contents. Then, move into a
+directory named "LinuxAssignment" if it exists; otherwise, create it.
+
+ans- cd ~
+cd LinuxAssignment
+mkdir LinuxAssignment
+
+and that's how i make it.
+
+b) File Management:
+a. Inside the "LinuxAssignment" directory, create a new file named "file1.txt". Display its
+contents.
+
+ans-cd LinuxAssignment
+touch file1.txt
+cat file1.txt
+
+c) Directory Management:
+a. Create a new directory named "docs" inside the "LinuxAssignment" directory.
+-mkdir LinuxAssignment/docs
+ls LinuxAssignment
+cp file1.txt LinuxAssignment/docs/file2.txt
+
+chmod 755 LinuxAssignment/docs/file2.txt
+chown $(whoami) LinuxAssignment/docs/file2.txt
+
+f) Final Checklist:
+a. Finally, list the contents of the "LinuxAssignment" directory and the root directory to
+ensure that all operations were performed correctly.
+ans - ls LinuxAssignment
+
+g) File Searching:
+a. Search for all files with the extension ".txt" in the current directory and its subdirectories.
+b. Display lines containing a specific word in a file (provide a file name and the specific
+word to search).
+ans-find . -type f -name "*.txt"
+grep "example" sample.txt
+
+j) File Compression:
+a. Compress the "docs" directory into a zip file.
+b. Extract the contents of the zip file into a new directory.
+ans -zip -r docs.zip LinuxAssignment/docs
+mkdir extracted_contents
+unzip docs.zip -d extracted_contents
+ls
+ls extracted_contents
+
+k) File Editing:
+a. Open the "file1.txt" file in a text editor and add some text to it.
+b. Replace a specific word in the "file1.txt" file with another word (provide the original
+word and the word to replace it with).
+ans -nano file1.txt
+sed -i 's/oldword/newword/g' file1.txt
+
+
+Problem 2: Read the instructions carefully and answer accordingly. If there is
+any need to insert some data then do that as well.
+
+
+a. Suppose you have a file named "data.txt" containing important information. Display the
+first 10 lines of this file to quickly glance at its contents using a command.
+- head -n 10 data.txt
+
+b. Now, to check the end of the file for any recent additions, display the last 5 lines of
+"data.txt" using another command.
+-tail -n 5 data.txt
+
+c. In a file named "numbers.txt," there are a series of numbers. Display the first 15 lines of
+this file to analyze the initial data set.
+-head -n 15 numbers.txt
+
+
+d. To focus on the last few numbers of the dataset, display the last 3 lines of "numbers.txt"
+- tail -n 3 numbers.txt
+
+e. Imagine you have a file named "input.txt" with text content. Use a command to translate
+all lowercase letters to uppercase in "input.txt" and save the modified text in a new file
+named "output.txt."
+-tr '[:lower:]' '[:upper:]' < input.txt > output.txt
+
+g. In a file named "fruit.txt," there is a list of fruits, but some fruits are repeated. Use a
+command to display each unique fruit along with the count of its occurrences in
+"fruit.txt."
+-sort fruit.txt | uniq -c
+
+
